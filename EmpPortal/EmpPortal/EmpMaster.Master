@@ -1,0 +1,119 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EmpMaster.master.cs" Inherits="EmpPortal.EmpMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <link href="css/Home.css" rel="stylesheet" />
+    <link href="css/Contact.css" rel="stylesheet" />
+     <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   
+    <form id="form1" runat="server">
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+         <div id="container"> 
+    
+        
+        <div class="MainHeader" style="background:radial-gradient(red,green); background-image: url('http://localhost:9575/image/Cloud_banner.jpg');">
+                    <table style="height:60px">
+                            <tr>
+                                <td style="width:400px;">
+                                    <h1>JOB HUNTING</h1>
+                                </td>
+                                <td>
+                                    <asp:UpdatePanel ID="Update" runat="server">
+                                        <ContentTemplate>
+                                            <div style="font-size:28px;">
+                                                <%=DateTime.Now.ToString("hh:mm:ss") %>                           
+                                            </div>
+                                        </ContentTemplate>
+                                        <Triggers>
+                                            <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                                        </Triggers>
+                                    </asp:UpdatePanel>
+                                    <asp:Timer ID="timer1" runat="server" Enabled="true" Interval="1000"></asp:Timer>
+                                </td>
+                            </tr>
+                </table>
+            
+                 <div class="MenuContainer">
+                    <ul>
+                                    <li>
+                                       <asp:LinkButton ID="btnLink1" runat="server" Text="Home" OnClick="btnLink1_Click" style="text-decoration:dashed" ForeColor="Black" >
+                                       </asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="btnLink2" runat="server" Text="Govt Jobs" OnClick="btnLink2_Click" ForeColor="Black"></asp:LinkButton>
+                                        
+                                   </li>  
+                                   <li>
+                                        <asp:LinkButton ID="btnLink3" runat="server" Text="Private Jobs" OnClick="btnLink3_Click" ForeColor="Black"></asp:LinkButton>
+                                   </li>
+                                   <li>
+                                        <asp:LinkButton ID="btnLink4" runat="server" Text="Contact Us" OnClick="btnLink4_Click" ForeColor="Black"></asp:LinkButton>
+                                    </li>
+                    </ul>
+                </div>
+        
+       </div>
+             <div class="ContentsContainer" style="border-width: thin; border-style: dotted">
+                    
+                 <%--<div class="ContentsContainerLeft" style="border-width: medium; border-top-style: dashed"></div>--%>
+                 <div class="ContentsContainerCenter">
+                      <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                        </asp:ContentPlaceHolder>
+                 </div>
+                              
+                 <div class="ContentsContainerRight" style="border-width: medium; border-style: solid;">
+                     <marquee behaviour="scroll" direction="up" scrolldelay="0" onmouseover="this.stop()" onmouseout="this.start()"; style="font-family:Verdana; font-size:18pt; font-size:small; color:#337dc3;">
+                       <ul>
+                           <li>
+                         <strong><a href="J_kBank.aspx">J & k Bank Job Openings</a></strong>  
+                         </li>
+                           <li>
+                          <strong><a href="ONGC.aspx">Vacancy in ONGC/Last Date:25-May</a></strong> 
+                               </li>
+                           <li> 
+                         
+                          <strong><a href="PSC.aspx">Opening In Punjab PSC</a></strong> 
+                          </li>
+                         <li>
+                           <strong><a href="UNICEF.aspx">UNICEF India Recruitment 2015-2016</a></strong> 
+                         </li>
+                           <li>
+                         <strong><a href="Forest.aspx">Ministry of Environment, Forest and Climate Change</a></strong> 
+                         </li>
+                           <li>
+                          <strong><a href="DU.aspx">Jobs in Delhi University</a></strong> 
+                         </li>
+                           <li>
+                         <strong><a href="Sainik.aspx">Sainik School Rewa</a></strong> 
+                         </li>
+                         <li>
+                             <strong><a href="Sainik.aspx">Vacancy In India PostOffice/Last Date:30-May</a></strong> 
+                         </li>
+                         </br>
+                         latest newssssss
+                         </br>
+                         latest newsz
+                         
+
+                     </marquee>
+                 </div>
+
+             </div>
+             <div class="footerDiv">
+                copyright & copy www.EmpPortal.com.All rights reserved.
+            </div>           
+    </div>
+    </form>
+       
+</body>
+</html>
