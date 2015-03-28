@@ -15,7 +15,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
     
     <div>
-        <table style="height:600px; width:790px; margin-bottom: 0px;">
+        <table style="height:6000px; width:790px; margin-bottom: 0px;">
             <tr>
                 <td style="background-color:aqua; margin:-2px; " class="auto-style4">
                     <ul>
